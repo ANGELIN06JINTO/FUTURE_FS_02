@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Login Page — split layout ── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  font-family: 'Inter', sans-serif;
+  background: #f5f6ff;
+  overflow: hidden;
+}
+
+/* ════════════════════════════════════════
+   LEFT ILLUSTRATION PANEL
+════════════════════════════════════════ */
+.login-illustration {
+  flex: 1 1 55%;
+  background: linear-gradient(145deg, #3949ab 0%, #5c6bc0 45%, #7986cb 75%, #9575cd 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 56px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glowing orbs */
+.login-illustration::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.login-illustration::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(149, 117, 205, 0.35) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Brand name in panel */
+.illus-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.illus-brand span {
+  opacity: 0.85;
+}
+
+/* Tagline */
+.illus-tagline {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+  margin-bottom: 36px;
+  max-width: 340px;
+  position: relative;
+  z-index: 1;
+}
+
+/* SVG illustration */
+.illus-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 12px 36px rgba(30, 40, 100, 0.25));
+  animation: floatUp 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0px);   }
+  to   { transform: translateY(-10px); }
+}
+
+/* Pagination dots */
+.illus-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot-active {
+  background: #ffffff;
+  transform: scale(1.25);
+}
+
+/* ════════════════════════════════════════
+   RIGHT LOGIN CARD
+════════════════════════════════════════ */
+.login-card {
+  flex: 0 0 420px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -8px 0 40px rgba(92, 107, 192, 0.1);
+}
+
+/* Signature element: iris left-edge accent bar */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #5c6bc0 0%, #9575cd 100%);
+}
+
+/* Subtle decorative circle top-right of card */
+.login-card::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(92, 107, 192, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Heading ── */
+.login-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #3949ab;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+/* ── Subtitle ── */
+.login-subtitle {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #9e9e9e;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+/* ── Inputs ── */
+.login-input {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #212121;
+  background: #f5f6ff;
+  border: 1.5px solid #e8eaf6;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  margin-bottom: 16px;
+}
+
+.login-input::placeholder {
+  color: #bdbdbd;
+  font-weight: 400;
+}
+
+.login-input:focus {
+  border-color: #7986cb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3.5px rgba(121, 134, 203, 0.18);
+}
+
+/* ── Password Container ── */
+.password-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.password-container .login-input {
+  margin-bottom: 0;
+  padding-right: 46px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1rem;
+  color: #9e9e9e;
+  user-select: none;
+  transition: color 0.15s;
+  line-height: 1;
+}
+
+.eye-icon:hover {
+  color: #5c6bc0;
+}
+
+/* ── Login Button ── */
+.login-btn {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 4px 14px rgba(92, 107, 192, 0.35);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%);
+  box-shadow: 0 6px 20px rgba(92, 107, 192, 0.45);
+  transform: translateY(-1px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(92, 107, 192, 0.3);
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — collapse to single column
+════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .login-page {
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(145deg, #3949ab 0%, #5c6bc0 40%, #f5f6ff 40%);
+  }
+
+  .login-illustration {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 36px 28px 28px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .illus-tagline {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .illus-svg {
+    max-width: 300px;
+  }
+
+  .illus-dots {
+    margin-top: 16px;
+  }
+
+  .login-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 24px 24px 0 0;
+    padding: 40px 32px 48px;
+    box-shadow: 0 -8px 32px rgba(92, 107, 192, 0.14);
+    margin-top: -20px;
+  }
+
+  .login-card::before {
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #5c6bc0 0%, #9575cd 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 24px 40px;
+  }
+
+  .login-card h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Navbar ── */
+.navbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1.5px solid #e8eaf6;
+  box-shadow: 0 2px 12px rgba(92, 107, 192, 0.09);
+  font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ── Logo ── */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3949ab;
+  letter-spacing: -0.3px;
+  user-select: none;
+}
+
+.logo span {
+  color: #7986cb;
+  font-weight: 600;
+}
+
+/* ── Logout Button ── */
+.logout-btn {
+  padding: 8px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5c6bc0;
+  background: transparent;
+  border: 1.5px solid #c5cae9;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.logout-btn:hover {
+  background: #5c6bc0;
+  color: #ffffff;
+  border-color: #5c6bc0;
+  box-shadow: 0 4px 12px rgba(92, 107, 192, 0.28);
+}
+
+.logout-btn:active {
+  background: #3949ab;
+  border-color: #3949ab;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logout-btn {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+}
